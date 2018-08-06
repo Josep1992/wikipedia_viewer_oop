@@ -19,3 +19,7 @@ main {
 .hidden {
   display: none;
 }
+
+.message {
+  color: #333;
+}
