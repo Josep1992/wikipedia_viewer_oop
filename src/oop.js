@@ -4,19 +4,17 @@ const endpoint = `https://en.wikipedia.org/w/api.php?action=opensearch&search=`;
 
 export default class Data {
   async getWikiData(searchTerm) {
-    //Input data
     const request = await axios.get(
       `https://cors-anywhere.herokuapp.com/${endpoint}${searchTerm}`,
     );
     const response = await request.data;
-
     return response;
   }
 
   displayError(error) {
     return new Promise(function(resolve, reject) {
       if (error) {
-        resolve();
+        resolve(error);
       } else {
         reject();
       }

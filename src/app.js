@@ -21,6 +21,7 @@ form.addEventListener('submit', (e) => {
       error_output.textContent = err;
       setTimeout(() => {
         message.classList.add('hidden');
+        error_output.textContent = '';
       }, 2000);
     });
   }
