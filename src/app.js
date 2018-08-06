@@ -8,9 +8,23 @@ const message = document.querySelector('.message');
 const data = new Data();
 
 form.addEventListener('submit', (e) => {
-  data.getWikiData().then((res) => {
-    console.log(res.data);
-  });
+  const searchTerm = document.forms[0].children[0].children[0].value;
+
+  if (searchTerm) {
+    data.getWikiData(searchTerm).then((res) => {
+      console.log(res);
+    });
+  } else {
+    data.displayError('Please enter a search term').then((err) => {
+      console.log(err);
+      message.classList.remove('hidden');
+      error_output.textContent = err;
+      setTimeout(() => {
+        message.classList.add('hidden');
+      }, 2000);
+    });
+  }
+
   e.target.reset();
   e.preventDefault();
 });
