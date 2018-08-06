@@ -1,0 +1,32 @@
+{
+  "name": "oop-practice",
+  "version": "1.0.0",
+  "description": "OOP practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --output-public-path=/dist/ --mode development --progress --open --hot",
+    "build": "webpack --mode production --progress"
+  },
+  "keywords": [
+    "OOP",
+    "Es6",
+    "webpack"
+  ],
+  "author": "Josep Lopez",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bulma": "^0.7.1"
+  }
+}

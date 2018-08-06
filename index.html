@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Search Wikipedia with a more simpler User interface">
+  <meta property="og:title" content="Wikipedia Viewer" />
+  <meta property="og:image" content="assets/wikipedia.svg" />
+  <meta property="og:url" content="After hosting url will go here" />
+  <title>Wikipedia Viewer</title>
+  <link rel="stylesheet" href="assets/reset.css">
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="./assets/wikipedia.svg" alt="wikipedia logo" width="112" height="28">
+      </a>
+    </div>
+  </nav>
+  <main class="container">
+    <article class="message is-danger ">
+      <div class="message-header">
+        <p>Error</p>
+      </div>
+      <div class="message-body">
+      </div>
+    </article>
+    <form class="field">
+      <div class="control">
+        <input class="input is-light" type="text" placeholder="Search for something" name="search">
+      </div>
+      <br>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+    </form>
+    <div class="content">
+    </div>
+  </main>
+  <script src="./dist/bundle.js"></script>
+</body>
+
+</html>
