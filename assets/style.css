@@ -10,6 +10,7 @@ body {
 .container {
   padding: 0 1em 1em 1em;
   margin: 0 auto;
+  /* width: 1000px; */
 }
 
 main {
@@ -22,4 +23,8 @@ main {
 
 .message {
   color: #333;
+}
+
+.notification__no-underline {
+  text-decoration: none !important;
 }
