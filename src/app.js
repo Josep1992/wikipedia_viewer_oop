@@ -27,18 +27,18 @@ form.addEventListener('submit', (e) => {
             `;
           });
 
-          let html2;
-          data[2].forEach((data) => {
-            html2 += ` 
-            <div class="notification">
-                <p>
-                  <a href='#'class="notification__no-underline">${data}</a>
-                </p>
-            </div> `;
-          });
+          // let html2;
+          // data[2].forEach((data) => {
+          //   html2 += `
+          //   <div class="notification">
+          //       <p>
+          //         <a href='#'class="notification__no-underline">${data}</a>
+          //       </p>
+          //   </div> `;
+          // });
 
           content.innerHTML = html;
-          content.insertAdjacentHTML('beforeend', html2);
+          // content.insertAdjacentHTML('beforeend', html2);
         });
       })
       .catch((error) => {
