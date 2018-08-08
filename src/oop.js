@@ -22,6 +22,8 @@ export default class Data {
   }
 
   createUi(data) {
-    return ``;
+    return new Promise((resolve, reject) => {
+      data ? resolve(data) : reject(new Error('Data is undefined'));
+    });
   }
 }
