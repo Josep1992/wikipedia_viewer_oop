@@ -5,6 +5,7 @@ const content = document.querySelector('.content');
 const error_output = document.querySelector('.message-body');
 const message = document.querySelector('.message');
 
+//Initialize the Data Class
 const data = new Data();
 
 form.addEventListener('submit', (e) => {
