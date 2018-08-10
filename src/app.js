@@ -17,16 +17,40 @@ form.addEventListener('submit', (e) => {
         data.createUi(res).then((data) => {
           console.log({ data });
           let html;
-          data.map((data) => {
+          let html2;
+          data[1].forEach((data) => {
             html += `
-            <div class="notification">
-                <p>
-                  <a href='#' class="notification__no-underline">${data}</a>
-                </p>  
+            <div class="message">
+                <div class="message-header">
+                 <p>${data}</p>
+                </div>
+                <div class="message-body"> 
+                
+                </div>
             </div> 
             `;
           });
+
           content.innerHTML = html;
+          let message_body = Array.from(
+            document.querySelectorAll('.message-body'),
+          );
+
+          data[2].forEach((data) => {
+            html2 += `
+                <p>${data}</p>  
+            `;
+            message_body.forEach((element) => {
+              let messages = Array.from(document.querySelectorAll('.message'));
+
+              if (
+                message_body.indexOf(element) ===
+                messages.indexOf(messages.children)
+              ) {
+                element += html2;
+              }
+            });
+          });
         });
       })
       .catch((error) => {
