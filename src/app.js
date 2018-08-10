@@ -17,7 +17,7 @@ form.addEventListener('submit', (e) => {
         data.createUi(res).then((data) => {
           console.log({ data });
           let html;
-          data.forEach((data) => {
+          data.map((data) => {
             html += `
             <div class="notification">
                 <p>
@@ -26,19 +26,7 @@ form.addEventListener('submit', (e) => {
             </div> 
             `;
           });
-
-          // let html2;
-          // data[2].forEach((data) => {
-          //   html2 += `
-          //   <div class="notification">
-          //       <p>
-          //         <a href='#'class="notification__no-underline">${data}</a>
-          //       </p>
-          //   </div> `;
-          // });
-
           content.innerHTML = html;
-          // content.insertAdjacentHTML('beforeend', html2);
         });
       })
       .catch((error) => {
