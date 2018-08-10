@@ -2,7 +2,7 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 //webpack config can also be functions
-module.exports = (env) => {
+module.exports = () => {
   return {
     entry: ['babel-polyfill', './src/app.js'],
     output: {
