@@ -16,46 +16,33 @@ form.addEventListener('submit', (e) => {
       .getWikiData(searchTerm)
       .then((res) => {
         data.createUi(res).then((data) => {
-          console.log({ data });
+          let names = [...data[1]];
+          let description = [...data[2]];
+          let link = [...data[3]];
+          //This html variable will contain the names
           let html;
+          //This html variable will contain the names information
           let html2;
-          data[1].forEach((data) => {
+          names.forEach((name, index) => {
             html += `
             <div class="message">
-                <div class="message-header">
-                 <p>${data}</p>
-                </div>
-                <div class="message-body"> 
-                
-                </div>
-            </div> 
-            `;
+              <div class="message-header">
+                <p>${name}</p>
+              </div>
+              <div class="message-body ${index}"></div>
+           </div> 
+           `;
           });
 
           content.innerHTML = html;
-          let message_body = Array.from(
-            document.querySelectorAll('.message-body'),
-          );
 
-          data[2].forEach((data) => {
-            html2 += `
-                <p>${data}</p>  
-            `;
-            message_body.forEach((element) => {
-              let messages = Array.from(document.querySelectorAll('.message'));
-
-              if (
-                message_body.indexOf(element) ===
-                messages.indexOf(messages.children)
-              ) {
-                element += html2;
-              }
-            });
+          description.forEach((desc, index) => {
+            html2 += `<p class='message-description ${index}'>${desc}</p>`;
           });
         });
       })
       .catch((error) => {
-        console.log(error);
+        console.log(new Error(error));
       });
   } else {
     data.displayError('Please enter a search term').then((err) => {
