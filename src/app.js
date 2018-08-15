@@ -32,13 +32,27 @@ form.addEventListener('submit', (e) => {
               <div class="message-body ${index}"></div>
            </div> 
            `;
+            content.innerHTML = html;
           });
-
-          content.innerHTML = html;
 
           description.forEach((desc, index) => {
-            html2 += `<p class='message-description ${index}'>${desc}</p>`;
+            html2 += `<p class="message_description ${index}">${desc}</p>`;
+            const message_body = Array.from(
+              document.querySelectorAll('.message-body'),
+            );
+
+            const message_description = Array.from(
+              document.querySelectorAll('.message_description'),
+            );
+            message_body.forEach((body) => {
+              message_description.forEach((desc) => {
+                if (body.classList[1] == desc.classList[1]) {
+                  body.innerHTML = html2;
+                }
+              });
+            });
           });
+          //
         });
       })
       .catch((error) => {
