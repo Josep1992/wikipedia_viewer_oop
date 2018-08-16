@@ -16,13 +16,13 @@ form.addEventListener('submit', (e) => {
       .getWikiData(searchTerm)
       .then((res) => {
         data.createUi(res).then((data) => {
-          let names = [...data[1]];
-          let description = [...data[2]];
-          let link = [...data[3]];
+          const names = [...data[1]];
+          const description = [...data[2]];
+          const link = [...data[3]];
           //This html variable will contain the names
-          let html;
-          //This html variable will contain the names information
-          let html2;
+          let html = '';
+          //This html variable will contain the names description
+          let html2 = '';
           names.forEach((name, index) => {
             html += `
             <div class="message">
@@ -32,25 +32,30 @@ form.addEventListener('submit', (e) => {
               <div class="message-body ${index}"></div>
            </div> 
            `;
-            content.innerHTML = html;
+          });
 
-            description.forEach((desc, index) => {
-              html2 = `<p class="description ${index}">${desc}</p>`;
-              console.log(html2);
-              const message_body = Array.from(
-                document.querySelectorAll('.message-body'),
-              );
-              const message_desc = Array.from(
-                document.querySelectorAll('.description'),
-              );
+          content.innerHTML = html;
 
-              message_body.forEach((element) => {
-                element.innerHTML = html2;
-                console.log({ element, message_desc });
-              });
+          description.forEach((desc, index) => {
+            html2 += `<p class="description ${index}">${desc}</p>`;
+
+            const message_body = Array.from(
+              document.querySelectorAll('.message-body'),
+            );
+
+            message_body.forEach((element) => {
+              element.innerHTML = html2;
             });
+          });
 
-            //==============================================================
+          const message_desc = Array.from(
+            document.querySelectorAll('.description'),
+          );
+
+          message_desc.forEach((desc) => {
+            if (desc.parentElement.classList[1] !== desc.classList[1]) {
+              desc.remove();
+            }
           });
         });
       })
