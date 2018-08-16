@@ -33,26 +33,25 @@ form.addEventListener('submit', (e) => {
            </div> 
            `;
             content.innerHTML = html;
-          });
 
-          description.forEach((desc, index) => {
-            html2 += `<p class="message_description ${index}">${desc}</p>`;
-            const message_body = Array.from(
-              document.querySelectorAll('.message-body'),
-            );
+            description.forEach((desc, index) => {
+              html2 = `<p class="description ${index}">${desc}</p>`;
+              console.log(html2);
+              const message_body = Array.from(
+                document.querySelectorAll('.message-body'),
+              );
+              const message_desc = Array.from(
+                document.querySelectorAll('.description'),
+              );
 
-            const message_description = Array.from(
-              document.querySelectorAll('.message_description'),
-            );
-            message_body.forEach((body) => {
-              message_description.forEach((desc) => {
-                if (body.classList[1] == desc.classList[1]) {
-                  body.innerHTML = html2;
-                }
+              message_body.forEach((element) => {
+                element.innerHTML = html2;
+                console.log({ element, message_desc });
               });
             });
+
+            //==============================================================
           });
-          //
         });
       })
       .catch((error) => {
