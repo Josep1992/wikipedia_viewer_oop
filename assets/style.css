@@ -20,8 +20,15 @@ main {
   display: none;
 }
 
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .message {
   color: #333;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .notification__no-underline {
