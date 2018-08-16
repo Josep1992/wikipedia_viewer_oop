@@ -8,6 +8,7 @@ export default class Data {
       `https://cors-anywhere.herokuapp.com/${endpoint}${searchTerm}`,
     );
     const response = await request.data;
+    console.log({ response });
     return response;
   }
 
