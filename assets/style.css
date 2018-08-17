@@ -8,7 +8,7 @@ body {
   background: white;
 }
 .container {
-  padding: 0 1em 1em 1em;
+  padding: 0 0.65em 0.65em 0.65em;
   margin: 15px auto;
 }
 
@@ -29,6 +29,11 @@ main {
   color: #333;
   width: 300px;
   margin: 0 auto;
+}
+
+.message_link {
+  margin: 10px;
+  display: block;
 }
 
 .notification__no-underline {
