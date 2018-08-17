@@ -5,11 +5,11 @@ html {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background: white;
 }
 .container {
   padding: 0 0.65em 0.65em 0.65em;
   margin: 15px auto;
+  width: 800px;
 }
 
 main {
@@ -27,7 +27,6 @@ main {
 
 .message {
   color: #333;
-  width: 300px;
   margin: 0 auto;
 }
 
