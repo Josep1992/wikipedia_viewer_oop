@@ -20,7 +20,6 @@ run
 
 ```
 npm run build
-``
 ```
 
 It will create the dist folder with the bundle.js file
