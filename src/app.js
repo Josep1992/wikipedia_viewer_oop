@@ -23,6 +23,8 @@ function handleError(err, seconds) {
   }, seconds);
 }
 
+// TODO check if data comes empty. if it does display a message letting the user no that the term didn't return any results
+
 form.addEventListener('submit', (e) => {
   const searchTerm = document.forms[0].children[0].children[0].value;
 
@@ -72,7 +74,8 @@ form.addEventListener('submit', (e) => {
           });
 
           links.forEach((link, index) => {
-            htmlForLinks += `<a href=${link} class="message_link tag is-dark ${index}" target="_blank">Read More Here📰</a>`;
+            htmlForLinks += `
+            <a href=${link} class="message_link tag is-dark ${index}" target="_blank">Read More Here📰</a>`;
 
             const links = arrayFromNodeList('.link');
 
