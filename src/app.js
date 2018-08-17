@@ -72,15 +72,20 @@ form.addEventListener('submit', (e) => {
           });
 
           links.forEach((link, index) => {
-            htmlForLinks += `<a href=${link} class="message_link tag ${index}">Read More Here📰</a>`;
+            htmlForLinks += `<a href=${link} class="message_link tag is-dark ${index}" target="_blank">Read More Here📰</a>`;
 
             const links = arrayFromNodeList('.link');
 
             links.forEach((link) => {
               link.innerHTML = htmlForLinks;
             });
+          });
 
-            const message_link = arrayFromNodeList('.message_link');
+          const message_link = arrayFromNodeList('.message_link');
+          message_link.forEach((link) => {
+            if (link.parentElement.classList[1] !== link.classList[3]) {
+              link.remove();
+            }
           });
         });
       })
