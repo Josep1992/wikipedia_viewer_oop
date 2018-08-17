@@ -17,40 +17,43 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body class="container box">
-  <br>
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item">
-        <img src="./assets/wikipedia.svg" alt="wikipedia logo" width="112" height="28">
-      </a>
-    </div>
-  </nav>
-  <main>
-    <article class="message is-danger hidden">
-      <div class="message-header">
-        <p>Error</p>
-      </div>
-      <div class="message-body">
-      </div>
-    </article>
-    <form class="field">
-      <div class="control">
-        <input class="input is-light" type="text" placeholder="Search for something" name="search" autofocus>
-      </div>
-      <br>
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+<body>
+  <div class="container box">
     <br>
-    <div class="content">
-    </div>
-  </main>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="./assets/wikipedia.svg" alt="wikipedia logo" width="112" height="28">
+        </a>
+      </div>
+    </nav>
+    <main>
+      <article class="message is-danger hidden">
+        <div class="message-header">
+          <p>Error</p>
+        </div>
+        <div class="message-body">
+        </div>
+      </article>
+      <form class="field">
+        <div class="control">
+          <input class="input is-light" type="text" placeholder="Search for something" name="search" autofocus>
+        </div>
+        <br>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+      <br>
+      <div class="content">
+      </div>
+    </main>
+  </div>
+
   <script src="./dist/bundle.js"></script>
 </body>
 
