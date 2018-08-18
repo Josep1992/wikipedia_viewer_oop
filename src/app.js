@@ -23,8 +23,8 @@ function handleError(err, seconds) {
   }, seconds);
 }
 
-function checkIfDataFromArrayIsEmpty(data,element){
-  if(data === ''){
+function checkIfDataFromArrayIsEmpty(data, element) {
+  if (data === '') {
     element.remove();
   }
 }
@@ -99,7 +99,6 @@ form.addEventListener('submit', (e) => {
         });
       })
       .catch((err) => {
-        //console.log(new Error(err));
         if (err.status === 0) {
           data
             .displayError('Your internet is too SLOW, Please try again later.')
