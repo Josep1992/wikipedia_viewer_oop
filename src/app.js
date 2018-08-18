@@ -42,9 +42,9 @@ form.addEventListener('submit', (e) => {
           const names = [...data[1]];
           const descriptions = [...data[2]];
           const links = [...data[3]];
-          //This html variable will contain the names
+
           let htmlForNames = '';
-          //This html variable will contain the names description
+
           let htmlForDescription = '';
           let htmlForLinks = '';
           names.forEach((name, index) => {
@@ -98,13 +98,25 @@ form.addEventListener('submit', (e) => {
           });
         });
       })
-      .catch((err) => {
-        if (err.status === 0) {
-          data
-            .displayError('Your internet is too SLOW, Please try again later.')
-            .then((err) => {
-              handleError(err, 2500);
-            });
+      .catch((error) => {
+        switch (error.status) {
+          case 0:
+            data
+              .displayError('Your internet is too SLOW.')
+              .then((error) => handleError(error, 2500));
+            break;
+          case 404:
+            data
+              .displayError('You really think it exist.')
+              .then((error) => handleError(error, 2500));
+            break;
+          case 400:
+            data
+              .displayError('Bad Request')
+              .then((error) => handleError(error, 2500));
+            break;
+          default:
+            throw new Error(error);
         }
       });
   } else {
