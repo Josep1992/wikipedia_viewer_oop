@@ -23,8 +23,8 @@ function handleError(err, seconds) {
   }, seconds);
 }
 
-function checkIfDataFromArrayIsEmpty(data, element) {
-  if (data === '') {
+function checkIfDataFromArrayIsEmpty(element) {
+  if (element === '') {
     element.remove();
   }
 }
