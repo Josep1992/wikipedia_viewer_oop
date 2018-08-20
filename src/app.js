@@ -23,13 +23,13 @@ function handleError(err, seconds) {
   }, seconds);
 }
 
+// TODO check if data comes empty. if it does display a message letting the user no that the term didn't return any results
 function checkIfDataFromArrayIsEmpty(element) {
   if (element === '') {
     element.remove();
   }
 }
 
-// TODO check if data comes empty. if it does display a message letting the user no that the term didn't return any results
 
 form.addEventListener('submit', (e) => {
   const searchTerm = document.forms[0].children[0].children[0].value;
