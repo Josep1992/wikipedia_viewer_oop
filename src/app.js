@@ -30,7 +30,6 @@ function checkIfDataFromArrayIsEmpty(element) {
   }
 }
 
-
 form.addEventListener('submit', (e) => {
   const searchTerm = document.forms[0].children[0].children[0].value;
 
@@ -42,7 +41,7 @@ form.addEventListener('submit', (e) => {
           const names = [...data[1]];
           const descriptions = [...data[2]];
           const links = [...data[3]];
-
+          // Check if names && description && links have data if not return Your Search term dit not bring any results
           let htmlForNames = '';
 
           let htmlForDescription = '';
