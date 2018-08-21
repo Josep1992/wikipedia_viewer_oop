@@ -23,13 +23,7 @@ function handleError(err, seconds) {
   }, seconds);
 }
 
-function checkIfDataFromArrayIsEmpty(data, element) {
-  if (data === '') {
-    element.remove();
-  }
-}
 
-// TODO check if data comes empty. if it does display a message letting the user no that the term didn't return any results
 
 form.addEventListener('submit', (e) => {
   const searchTerm = document.forms[0].children[0].children[0].value;
@@ -42,9 +36,23 @@ form.addEventListener('submit', (e) => {
           const names = [...data[1]];
           const descriptions = [...data[2]];
           const links = [...data[3]];
-          //This html variable will contain the names
+
+          // if (
+          //   names.length === 0 &&
+          //   descriptions.length === 0 &&
+          //   links.length === 0
+          // ) {
+          //   data
+          //     .displayError(
+          //       `It look's like your search didn't bring any results. Try Another?`,
+          //     )
+          //     .then((err) => displayError(err, 2500));
+          // }else{
+
+          // }
+
           let htmlForNames = '';
-          //This html variable will contain the names description
+
           let htmlForDescription = '';
           let htmlForLinks = '';
           names.forEach((name, index) => {
@@ -76,6 +84,8 @@ form.addEventListener('submit', (e) => {
           message_desc.forEach((desc) => {
             if (desc.parentElement.classList[1] !== desc.classList[1]) {
               desc.remove();
+            } else if (desc.textContent.includes('may refer to:')) {
+              desc.parentElement.parentElement.remove();
             }
           });
 
@@ -98,14 +108,25 @@ form.addEventListener('submit', (e) => {
           });
         });
       })
-      .catch((err) => {
-        //console.log(new Error(err));
-        if (err.status === 0) {
-          data
-            .displayError('Your internet is too SLOW, Please try again later.')
-            .then((err) => {
-              handleError(err, 2500);
-            });
+      .catch((error) => {
+        switch (error.status) {
+          case 0:
+            data
+              .displayError('Your internet is too SLOW.')
+              .then((error) => handleError(error, 2500));
+            break;
+          case 404:
+            data
+              .displayError('You really think it exist.')
+              .then((error) => handleError(error, 2500));
+            break;
+          case 400:
+            data
+              .displayError('Bad Request')
+              .then((error) => handleError(error, 2500));
+            break;
+          default:
+            throw new Error(error);
         }
       });
   } else {
