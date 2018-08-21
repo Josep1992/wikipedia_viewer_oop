@@ -23,8 +23,6 @@ function handleError(err, seconds) {
   }, seconds);
 }
 
-
-
 form.addEventListener('submit', (e) => {
   const searchTerm = document.forms[0].children[0].children[0].value;
 
