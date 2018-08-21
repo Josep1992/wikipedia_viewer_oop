@@ -34,7 +34,21 @@ form.addEventListener('submit', (e) => {
           const names = [...data[1]];
           const descriptions = [...data[2]];
           const links = [...data[3]];
-          // Check if names && description && links have data if not return Your Search term dit not bring any results
+
+          // if (
+          //   names.length === 0 &&
+          //   descriptions.length === 0 &&
+          //   links.length === 0
+          // ) {
+          //   data
+          //     .displayError(
+          //       `It look's like your search didn't bring any results. Try Another?`,
+          //     )
+          //     .then((err) => displayError(err, 2500));
+          // }else{
+
+          // }
+
           let htmlForNames = '';
 
           let htmlForDescription = '';
