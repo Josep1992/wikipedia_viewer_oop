@@ -30,6 +30,14 @@ form.addEventListener('submit', (e) => {
     data
       .getWikiData(searchTerm)
       .then((res) => {
+        if (res[1].length === 0 && res[2].length === 0 && res[3].length === 0) {
+          data
+            .displayError("Your search didn't bring any results 😭😭😭")
+            .then((error) => {
+              handleError(error, 2500);
+              return;
+            });
+        }
         data.createUi(res).then((data) => {
           const names = [...data[1]];
           const descriptions = [...data[2]];
@@ -97,17 +105,17 @@ form.addEventListener('submit', (e) => {
         switch (error.request.status) {
           case 0:
             data
-              .displayError('Your internet is too SLOW.')
+              .displayError('Your internet is too 🐌🐌🐌')
               .then((error) => handleError(error, 2500));
             break;
           case 404:
             data
-              .displayError('You really think it exist.')
+              .displayError('You really think it exist 🤔')
               .then((error) => handleError(error, 2500));
             break;
           case 400:
             data
-              .displayError('Bad Request')
+              .displayError('Bad Request 🤷🏻‍')
               .then((error) => handleError(error, 2500));
             break;
           default:
