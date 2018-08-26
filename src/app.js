@@ -93,7 +93,8 @@ form.addEventListener('submit', (e) => {
         });
       })
       .catch((error) => {
-        switch (error.status) {
+        console.log({ error: error, request: error.request.status });
+        switch (error.request.status) {
           case 0:
             data
               .displayError('Your internet is too SLOW.')
