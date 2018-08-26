@@ -5,12 +5,12 @@ html {
 }
 body {
   font-family: 'Open Sans', sans-serif;
+  padding: 1em;
 }
+
 .container {
-  padding: 0 0.65em 0.65em 0.65em;
   margin: 25px auto;
-  width: 625px;
-  min-width: 300px;
+  max-width: 650px;
 }
 
 .social-media {
