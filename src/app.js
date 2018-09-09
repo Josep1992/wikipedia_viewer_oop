@@ -78,6 +78,8 @@ form.addEventListener('submit', (e) => {
               desc.remove();
             } else if (desc.textContent.includes('may refer to:')) {
               desc.parentElement.parentElement.remove();
+            } else if (desc.textContent === '') {
+              desc.parentElement.parentElement.remove();
             }
           });
 
